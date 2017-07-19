@@ -1,0 +1,183 @@
+#caseText{
+	#caseScrollBar{
+		height: 100%;
+		position: absolute;
+		left: 0;
+		width: 30px;
+		ul{
+			padding-left: 10px;
+			.slideCircle{
+				padding-top: 5px;
+				padding-bottom: 5px;
+				list-style: none;
+				width: 15px;
+				.unactive{
+					fill:none;
+					stroke-width:3;
+					stroke-miterlimit:10;
+					&.hideSlideCircle{
+						stroke: transparent;
+					}
+					&.showSlideCircle{
+						stroke: #02696D;
+					}	
+				}
+				.active{
+					&.hideSlideCircle{
+						fill: transparent;
+					}
+					&.showSlideCircle{
+						fill: #02696D;
+					}
+				}
+			}
+		}
+	}
+
+	#caseIcon{
+		height: 120px;
+		#Lemonade{
+			padding-top: 15px;
+			width: 60px;
+			.icon{
+				fill: #2F3542;
+			}
+		}
+	}
+
+	#caseTitle{
+		overflow: auto;
+		h1{
+			color: black;
+			font-size: 30px;
+			margin: 0;
+			padding-bottom: 10px; 
+			height: 100%;
+			text-align: center;
+		}
+	}
+
+	#caseContentOuter{
+		height: 190px;
+		overflow: hidden;
+	}
+	$slideTransition: 0.25s;
+	.caseContentInner{
+		width: 100%;
+		height: 100%;
+		padding: 5px 90px 5px 90px;
+		overflow: hidden;
+		position: absolute;
+		p{
+			overflow: hidden;
+			height:100%;
+			color: #02696D;
+			font-size: 14px;
+		}
+		&.slideOutUpCaseStudyText{
+			animation-name: slideOutUpCaseStudyText;
+		    animation-duration: $slideTransition;
+		    animation-timing-function: ease-in-out;
+		    animation-fill-mode: both;
+		}
+		&.slideOutDownCaseStudyText{
+			animation-name: slideOutDownCaseStudyText;
+		    animation-duration: $slideTransition;
+		    animation-timing-function: ease-in-out;
+		    animation-fill-mode: both;
+		}
+		&.slideInUpCaseStudyText{
+			animation-name: slideInUpCaseStudyText;
+		    animation-duration: $slideTransition;
+		    animation-timing-function: ease-in-out;
+		    animation-fill-mode: both;
+		}
+		&.slideInDownCaseStudyText{
+			animation-name: slideInDownCaseStudyText;
+		    animation-duration: $slideTransition;
+		    animation-timing-function: ease-in-out;
+		    animation-fill-mode: both;
+		}
+
+	}
+
+	@keyframes slideOutUpCaseStudyText{
+		0%{top: 0;}
+		100%{top: -100%;}
+	}
+	@keyframes slideOutDownCaseStudyText{
+		0%{top: 0;}
+		100%{top: 100%;}
+	}
+	@keyframes slideInUpCaseStudyText{
+		0%{top: 100%;}
+		100%{top: 0;}
+	}
+	@keyframes slideInDownCaseStudyText{
+		0%{top: -100%;}
+		100%{top: 0;}
+	}
+
+	#navigationContainer{
+		position: absolute;
+		height: 60px;
+		width: 100%;
+		bottom: 0;
+		#upArrowContainer{
+			overflow: hidden;
+			display: inline-block;
+			position: relative;
+			left: 50%;
+			top: 20px;
+			transform: translateX(-100%);
+			opacity: 0.2;
+			#upArrowIcon{
+				width: 15px;
+				.upArrowFillOne{
+					fill:none;
+					stroke:#02686E;
+					stroke-width:4;
+					stroke-linecap:round;
+					stroke-linejoin:round;
+					stroke-miterlimit:10;
+				}
+				.upArrowFillTwo{
+					fill:none;
+					stroke:#3CBEB7;
+					stroke-width:4;
+					stroke-linecap:round;
+					stroke-linejoin:round;
+					stroke-miterlimit:10;
+				}
+			}
+		}
+		#downArrowContainer{
+			overflow: hidden;
+			display: inline-block;
+			position: relative;
+			left: 50%;
+			top: 20px;
+			transform: translateX(-100%);
+			#downArrowIcon{
+				width: 15px;
+				.downArrowFillOne{
+					fill:none;
+					stroke:#02686E;
+					stroke-width:4;
+					stroke-linecap:round;
+					stroke-linejoin:round;
+					stroke-miterlimit:10;
+				}
+				.downArrowFillTwo{
+					fill:none;
+					stroke:#3CBEB7;
+					stroke-width:4;
+					stroke-linecap:round;
+					stroke-linejoin:round;
+					stroke-miterlimit:10;
+				}
+			}
+
+		}
+	}
+}

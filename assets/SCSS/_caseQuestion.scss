@@ -1,0 +1,170 @@
+#caseQuestions{
+	#absoluteContainer{
+		position: absolute;
+		width: 546.5px;
+		height: 100%;
+		right: 0;
+	}
+	#changingQuestionResponseOuter{
+		position: absolute;
+		width: calc(100% - 180px);
+		height: 275px;
+		transform: translateX(90px) translateY(70px);
+		overflow: hidden;
+		.changingQuestionResponseInner{
+			position: absolute;
+			width: calc(100% - 40px);
+			height: calc(100% - 20px);
+			overflow: hidden;
+			margin-left: 10px;
+			margin-right: 10px;
+			transform: translateX(10px) translateY(10px);
+			#caseQuestionText{
+				padding-bottom: 10px;
+				width: 100%;
+				p{
+					font-size: 14px;
+					color: white;
+				}
+			}
+			#answerContainer{
+				height: 50%;
+				width: 100%;
+				p{
+					width: 100%;
+					height: 100%;
+					padding: 10px 0px 10px 0px;
+					border-radius: 15px;
+					opacity: 0.8;
+					background-color: white;
+					textarea{
+						padding: 0px 15px 0px 15px;
+						text-align: left;
+						resize: none;
+						outline: none;
+						width: 100%;
+						height: 100%;
+						
+					}
+				}
+			}
+			$slideTransition: 0.25s;
+			&.slideLeftOutCaseQuestion{
+				animation-name: slideLeftOutCaseQuestion;
+		    	animation-duration: $slideTransition;
+		    	animation-timing-function: ease-in-out;
+		    	animation-fill-mode: both;
+		    }
+			&.slideRightOutCaseQuestion{
+				animation-name: slideRightOutCaseQuestion;
+		    	animation-duration: $slideTransition;
+		    	animation-timing-function: ease-in-out;
+		    	animation-fill-mode: both;
+		    }
+			&.slideLeftInCaseQuestion{
+				animation-name: slideLeftInCaseQuestion;
+		    	animation-duration: $slideTransition;
+		    	animation-timing-function: ease-in-out;
+		    	animation-fill-mode: both;
+			}
+			&.slideRightInCaseQuestion{
+				animation-name: slideRightInCaseQuestion;
+		    	animation-duration: $slideTransition;
+		    	animation-timing-function: ease-in-out;
+		    	animation-fill-mode: both;
+			}
+		}
+	}
+	#sideBarQuestionIcon{
+		position: absolute;
+		right: 0;
+		top: 50%;
+		padding-right: 10px;
+		transform: translateY(-50%);
+		overflow: auto;
+		#questionMark{
+			width: 15px;
+			.iconFill{
+				fill:#FFFFFF;
+			}
+			.fadded{
+				opacity:0.8;
+			}
+		}
+	}
+	#bottomProgressBarDots{
+		width: 100%;
+		position: absolute;
+		height: 100px;
+		bottom: 0;
+		display: flex;
+		flex-flow: row wrap;
+		justify-content: space-between;
+		.questionProgressCircle{
+			&:first-child{
+				padding-left: 50px;
+				left: 0;
+			}
+			&:last-child{
+				padding-right: 75px;
+				right: 0;
+			}
+			#questionProgressCircleIcon{
+				width: 25px;
+				position: absolute;
+				z-index: 2;
+				.outer{
+					&.active{
+						fill:none;
+						stroke:#FFFFFF;
+						stroke-width:3;
+						stroke-miterlimit:10;
+					}
+					&.hidden{
+						stroke:transparent;
+					}
+				}
+				.inner{
+					fill: #FFFFFF;
+				}
+			}
+		}
+	}	
+	#bottomProgressBarLines{
+		width: calc(100% - 125px);
+		left: 50%;
+		transform: translateX(-50%);
+		position: absolute;
+		height: 100px;
+		bottom: 0;
+		display: flex;
+		.progressLine{
+			position: relative;
+			margin-left: 20px;
+			margin-right: 20px;
+			flex: 1;
+			height: 3px;
+			border-radius: 10px;
+			background-color: white;
+			top: 10px;
+			z-index: 0;
+		}
+	}
+}
+
+@keyframes slideLeftOutCaseQuestion{
+	0%{left: 0;}
+	100%{left: -100%;}
+}
+@keyframes slideRightOutCaseQuestion{
+	0%{left: 0;}
+	100%{left: 100%;}
+}
+@keyframes slideLeftInCaseQuestion{
+	0%{left: 100%;}
+	100%{left: 0;}
+}
+@keyframes slideRightInCaseQuestion{
+	0%{left: -100%;}
+	100%{left: 0;}
+}

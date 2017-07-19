@@ -1,0 +1,113 @@
+#border{
+	position: absolute;
+	width: 1117px;
+	height: 476px;
+	border: 4px solid white;
+	border-radius: 5px;
+}
+
+
+#caseContentOuterContainer{
+	width: 1093px;
+	height: 453px;
+	overflow: hidden;
+	position: absolute;
+	font-size: 0; //2 divs at 50% fix
+}
+
+#caseText{
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	background-color: white;
+	overflow: hidden;
+	position: relative;
+	font-size: 1rem; //2 divs at 50% fix
+}
+
+#caseQuestions{
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	background-color: #48CBCB;
+	overflow: hidden;
+	position: relative;
+	font-size: 1rem; //2 divs at 50% fix
+}
+
+body{
+	background-color: black;
+	width: 100%;
+	height: 100%;
+}
+
+*{
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+.centerBoth{
+	position: relative;
+	top: 50%;
+	left: 50%;
+	transform: translateY(-50%) translateX(-50%);
+}
+.centerVertical{
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+
+}
+.centerHorizontal{
+	position: relative;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+@import 'caseText';
+@import 'caseQuestion';
+
+$caseTextQuestionContractExpandAnimationTimer: 0.25s;
+.caseTextExpandAnimation{
+	animation-name: caseTextExpand;
+	animation-duration: $caseTextQuestionContractExpandAnimationTimer;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+}
+.caseQuestionExpandAnimation{
+	animation-name: caseQuestionExpand;
+	animation-duration: $caseTextQuestionContractExpandAnimationTimer;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+}
+.caseTextContractAnimation{
+	animation-name: caseTextContract;
+	animation-duration: $caseTextQuestionContractExpandAnimationTimer;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+}
+.caseQuestionContractAnimation{
+	animation-name: caseQuestionContract;
+	animation-duration: $caseTextQuestionContractExpandAnimationTimer;
+	animation-timing-function: ease-in-out;
+	animation-fill-mode: both;
+}
+@keyframes caseTextExpand{
+	0%{width: 50%;}
+	100%{width: 96%;}
+}
+
+@keyframes caseTextContract{
+	0%{width: 96%;}
+	100%{width: 50%;}
+}
+
+@keyframes caseQuestionExpand{
+	0%{width: 4%;}
+	100%{width: 50%;}
+}
+
+@keyframes caseQuestionContract{
+	0%{width: 50%;}
+	100%{width: 4%;}
+}
